@@ -15,6 +15,14 @@
         <i class="fa fa-search" > </i>
     </a>
     </div>
-    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelector(".btn-search").addEventListener("click", function () {
+    const value = document.querySelector(".tbox-search").value;
+    alert("Aradığın kelime: " + value);
+  });
+});
+</script>
+
 </body>
 </html>
