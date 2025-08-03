@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Haber Analiz Sayfası</h1>
+    <p id="news-link"></p>
+
+    <div class="analysis-container">
+        <div class="analysis-item">
+           <h3>Metin Analizi</h3>
+           <div class="score-container">
+              <div class="score-bar" id="text-score-bar"></div>
+              <span class="score-text" id="text-score">0</span>
+           </div>
+        </div>
+        
+        <div class="analysis-item">
+           <h3>Görsel Analiz</h3>
+           <div class="score-container">
+              <div class="score-bar" id="image-score-bar"></div>
+              <span class="score-text" id="image-score">0</span>
+           </div>
+        </div>
+        
+
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const newUrl = params.get("url");
+
+        if(newUrl) {
+            document.getElementById("news-link").innerText = "Analiz Edilen Haber:" + newUrl;
+        }
+        else{
+            document.getElementById("news-link").innerText = "Herhangi bir haber linki girilmedi.";
+        }
+
+        function updateScore(elementId, score) {
+            const scoreBar = document.getElementById(elementId);
+            const scoreText = document.getElementById(elementId.replace("-bar", ""));
+
+            if (scoreBar && scoreText) {
+                scoreBar.style.width = score + "%";
+                scoreText.innerText = score + "%";
+
+
+
+                let gradientStart;
+                if (score <= 30) {
+                    gradientStart = "red";
+                } else if (score <= 70) {
+                    gradientStart = "yellow";
+                } else {
+                    gradientStart = "green";
+                }
+
+                scoreBar.style.background = `linear-gradient(to right, ${gradientStart}, green)`;
+        
+
+
+            }else {
+                console.error("Hata:" + elementId + "veya" + elementId.replace("-bar", "") +"bulunamadı!");            
+            }
+        }
+
+         // Örnek analiz skorları (burayı API ile değiştiricem.)
+         setTimeout(() => {
+            updateScore("text-score-bar", 75);
+            updateScore("image-score-bar", 50);
+        }, 1000); // 1 saniye sonra güncellenicek
+
+    </script>
+
+</body>
+</html>

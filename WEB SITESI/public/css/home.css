@@ -1,0 +1,42 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 0 10px;
+}
+
+.home .wrapper {
+  width: 100%;
+  max-width: 1366px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 10px;
+  gap: 15px; /* elemanlar arası boşluk */
+}
+
+.home .wrapper > .child {
+  flex: 1 1 250px; /* Esnek ve minimum 250px */
+  margin: 5px;
+  /* background: #eee; Örnek arka plan */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+
+.home .wrapper > .child img {
+   width: 300px;
+   max-width: 100%;
+   height: auto;
+   display: block;
+   border-radius: 8px;
+ }

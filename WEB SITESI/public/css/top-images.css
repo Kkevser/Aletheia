@@ -1,0 +1,8 @@
+.top-image{
+    width: 400%;
+    height: 100px;
+    object-fit: cover;
+    position: relative;
+    top: -20px;
+    left: -300px;
+}

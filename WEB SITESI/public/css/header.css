@@ -1,0 +1,192 @@
+.header {
+   margin-top: 70px;
+   width: 100%;
+   position: relative;
+   display: flex;
+   justify-content: center;
+
+}
+
+.image-top img {
+   width: 150%;
+   
+   height: auto;
+   max-height: 150px;
+   object-fit: cover;
+   
+   position: relative;
+   top: -20px;
+   left: -300px;
+   margin-bottom: 10px;
+   transform: scale(0.5);
+}
+
+.image-bottom img{
+   width: 150%;
+   height: auto;
+   max-height: 150px;
+   object-fit: cover;
+   
+   position: relative;
+   top: -20px;
+   left: -300px;
+   margin-top: 10px;
+   transform: scale(0.5);
+}
+
+
+.header-container {
+   margin-top: 0px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   padding: 20px 0 5px;
+}
+
+.image-container {
+   display: flex;
+   flex-direction: column; 
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   max-width: 1000px;
+   gap: 15px;
+}
+
+.header-image {
+   width: 1920px;
+   max-height: 150px;
+   object-fit: cover;
+}
+
+.top-image {
+   margin-bottom: 5px;
+}
+
+.bottom-image {
+   margin-top: 5px;
+   margin-bottom: 0; 
+}
+
+.header-title {
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 4rem;
+   color: black;
+   margin: 0;
+   white-space: nowrap;
+   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+   text-align: center;
+   padding: 5px 0;
+}
+
+
+.header-container {
+   opacity: 0;
+   transition: all 0.5s;
+}
+
+.header-container.active {
+   opacity: 1;
+}
+
+.header h1,
+.header h3 {
+   position: absolute;
+}
+
+.header h1 {
+   display: flex;
+   flex-direction: column; 
+   align-items: center; 
+   position: relative;
+   gap: 20px;
+  
+   top: -60px;
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 4rem;
+   color: white;
+   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px rgba(0, 0, 0, 0.4), 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+
+
+.header h1 img:first-child {
+   position: relative;
+   align-self: flex-start;
+}
+
+.header h1 img:last-child {
+   position: relative;
+   align-self: flex-end;
+}
+
+
+.header-container, .header-title, .header-image {
+   opacity: 1 !important;
+   transform: none !important;
+   transition: none !important;
+}
+
+@media screen and (max-width: 768px) {
+   .header-image {
+      width: 90%;
+   }
+   
+   .header-title {
+      font-size: 3.5rem;
+   }
+}
+
+@media screen and (max-width: 576px) {
+   .header-title {
+      font-size: 3rem;
+   }
+   
+   .image-container {
+      gap: 10px;
+   }
+}
+
+
+.header h3 {
+   top: 80px;
+   font-family: 'Josefin Sans', sans-serif;
+   color: white;
+   font-size: 2.6rem;
+   text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4), 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Scroll animation */
+
+.header {
+   transform: translateX(-30px);
+   transition: all 0.5s;
+   opacity: 0;
+}
+.header.active {
+   transform: translateX(0px);
+   opacity: 1;
+}
+
+.header h1,
+.header h3 {
+   position: absolute;
+   transform: translateY(-20px);
+   transition: all 0.8s;
+   opacity: 0;
+}
+.header.active h1,
+.header.active h3 {
+   position: absolute;
+   transform: translateY(0px);
+   opacity: 1;
+}
+
+.header.active h3 {
+   transition-delay: 0.3s;
+   position: absolute;
+   transform: translateY(0px);
+
+}
+
